@@ -7,6 +7,7 @@ import {
     getIsAscending,
     getSelectedPlatform,
     getSortBy,
+    getTotalPages,
 } from "../../redux/reducers/games-ui/Selectors";
 import {selectNextPageInGameList, selectPrevPageInGameList, sortGamesList,} from "../../redux/actions/games-ui/Actions";
 import {fetchGames,} from "../../redux/actions/games/Actions";
@@ -30,6 +31,7 @@ const mapStateToProps = (state) => {
         fetchingGamesFailure: getFetchingGamesFailure(state),
         fetchingGamesSuccessful: getFetchingGamesSuccessful(state),
         totalNumOfGames: getTotalNumOfGames(state),
+        totalNumOfPages: getTotalPages(state),
     }
 };
 
@@ -81,7 +83,7 @@ class GamesContainer extends Component {
         } else if (this.props.fetchingGamesSuccessful) {
             ContentComponent = <GamesList items={this.props.gamesForCurrentPage}
                                           currentPage={this.props.currentPageNumber}
-                                          totalPages={this.props.totalNumOfGames}
+                                          totalPages={this.props.totalNumOfPages}
                                           onNextPage={this.onNextPage}
                                           onPrevPage={this.onPrevPage}/>;
         }

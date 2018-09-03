@@ -1,5 +1,5 @@
 import {createSelector,} from 'reselect';
-import {getGamesList} from "../games/Selectors";
+import {getGamesList, getTotalNumOfGames} from "../games/Selectors";
 import _orderBy from "lodash/orderBy";
 
 const getGamesUiState = (state) => {
@@ -29,6 +29,11 @@ export const getPlatformList = (state) => {
 export const getSelectedPlatform = (state) => {
     return getGamesUiState(state).selectedPlatform;
 };
+
+export const getTotalPages = createSelector(
+    [getTotalNumOfGames, getTotalRowsPerPage],
+    (numOfGames, rowsPerPage) => Math.ceil(numOfGames/rowsPerPage)
+);
 
 export const getSortedGameList = createSelector(
   [getGamesList, getSortBy, getIsAscending],
