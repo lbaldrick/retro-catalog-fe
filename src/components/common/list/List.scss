@@ -1,4 +1,9 @@
 .list {
   width: 100%;
   list-style: none;
+  padding: 0;
+
+  &_item {
+    padding: 1em;
+  }
 }

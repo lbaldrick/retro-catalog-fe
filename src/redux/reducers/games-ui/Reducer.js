@@ -1,6 +1,6 @@
 import { SELECT_NEXT_PAGE_IN_GAME_LIST,
     SELECT_PREV_PAGE_IN_GAME_LIST,
-    SORT_GAMES_LIST, SELECT_GAME_PLATFORM
+    SORT_GAMES_LIST, SELECT_GAME_PLATFORM, RESET_STATE
 } from '../../actions/games-ui/Actions';
 
 import AtariIcon from '../../../../img/atari-2600.png';
@@ -35,6 +35,8 @@ const gamesUiReducer = (state = INITIAL_STATE, action) => {
             return selectNextPage(action, state);
         case SELECT_GAME_PLATFORM:
             return selectPlatform(action, state);
+        case RESET_STATE:
+            return resetState(action, state);
         default:
             return state;
     }
@@ -62,6 +64,15 @@ const selectPrevPage = (action, state) => {
 const selectPlatform = (action, state) => {
     return Object.assign({}, state, {
         selectedPlatform: action.payload.platform ,
+    });
+};
+
+const resetState = (action, state) => {
+    return Object.assign({}, state, {
+        sortBy: null,
+        isAscending: false,
+        selectedPlatform: null,
+        currentPageNumber: 0,
     });
 };
 

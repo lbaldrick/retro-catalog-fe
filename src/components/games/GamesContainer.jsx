@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {getFetchingGamesInProgress, getFetchingGamesFailure,
-    getFetchingGamesSuccessful, getPlatform, getTotalNumOfGames,} from "../../redux/reducers/games/Selectors";
+    getFetchingGamesSuccessful, getTotalNumOfGames,} from "../../redux/reducers/games/Selectors";
 import {
     getCurrentPageNumber,
     getGamesForCurrentPage,
@@ -9,7 +9,7 @@ import {
     getSortBy,
     getTotalPages,
 } from "../../redux/reducers/games-ui/Selectors";
-import {selectNextPageInGameList, selectPrevPageInGameList, sortGamesList,} from "../../redux/actions/games-ui/Actions";
+import {selectNextPageInGameList, selectPrevPageInGameList, sortGamesList, resetState} from "../../redux/actions/games-ui/Actions";
 import {fetchGames,} from "../../redux/actions/games/Actions";
 import {withRouter} from "react-router-dom";
 import connect from "react-redux/es/connect/connect";
@@ -17,6 +17,8 @@ import Spinner from "../common/progress/Spinner.jsx";
 import ErrorMessage from "../common/feedback/ErrorMessage.jsx";
 import GameListItem from "../../components/games/GameListItem.jsx";
 import PaginatedList from "../../components/common/list/PaginatedList.jsx";
+import './GamesContainer.scss';
+import GameSort from "./GameSort.jsx";
 
 const GamesList = PaginatedList(GameListItem);
 
@@ -38,16 +40,19 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = dispatch => {
     return {
         onSelectNextPageInGameList: () => {
-
+            dispatch(selectNextPageInGameList());
         },
         onSelectPrevPageInGameList: () => {
-
+            dispatch(selectPrevPageInGameList());
         },
-        onSortGamesList: (id) => {
-
+        onSortGamesList: (sortBy, isAscending) => {
+            dispatch(sortGamesList(sortBy, isAscending));
         },
         fetchGames: (platform) => {
             dispatch(fetchGames(platform));
+        },
+        resetState: (platform) => {
+            dispatch(resetState(platform));
         }
 
     }
@@ -60,16 +65,24 @@ class GamesContainer extends Component {
         this.props.fetchGames(this.props.selectedPlatform);
     }
 
+    componentWillUnmount() {
+        this.props.resetState();
+    }
+
     onNextPage = () => {
-        this.props.onSelectNextPageInGameList();
+        if (this.props.currentPageNumber + 1 < this.props.totalNumOfPages) {
+            this.props.onSelectNextPageInGameList();
+        }
     };
 
     onPrevPage = () => {
-        this.props.onSelectPrevPageInGameList();
+        if (this.props.currentPageNumber ) {
+            this.props.onSelectPrevPageInGameList();
+        }
     };
 
-    onSortList = () => {
-        this.props.onSortGamesList();
+    onSortList = (sortBy, isAscending) => {
+        this.props.onSortGamesList(sortBy, isAscending);
     };
 
     render () {
@@ -81,11 +94,14 @@ class GamesContainer extends Component {
             ContentComponent = <ErrorMessage errorText={`Failed to fetch the ${this.props.platform} games list.`}
                                              titleText={'Sorry something went wrong'}/>
         } else if (this.props.fetchingGamesSuccessful) {
-            ContentComponent = <GamesList items={this.props.gamesForCurrentPage}
-                                          currentPage={this.props.currentPageNumber}
-                                          totalPages={this.props.totalNumOfPages}
-                                          onNextPage={this.onNextPage}
-                                          onPrevPage={this.onPrevPage}/>;
+            ContentComponent = <div className={'games-container_list'}>
+                <GameSort onSort={this.onSortList} selectedKey={this.props.sortBy} isAscending={this.props.isAscending}/>
+                <GamesList items={this.props.gamesForCurrentPage}
+                           currentPage={this.props.currentPageNumber}
+                           totalPages={this.props.totalNumOfPages}
+                           onNextPage={this.onNextPage}
+                           onPrevPage={this.onPrevPage}/>
+            </div>
         }
 
         return <div className={'games-container'}>

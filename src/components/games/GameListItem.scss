@@ -1,0 +1,14 @@
+.games-list-item {
+
+  display: flex;
+
+  &_image {
+    img {
+      width: 10em;
+    }
+  }
+
+  &_info {
+    margin: auto;
+  }
+}

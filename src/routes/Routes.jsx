@@ -18,8 +18,8 @@ const createRoutes = () => {
                 <Switch>
                     <Route exact path="/" component={App} />
                     <Route exact path="/callback" component={AuthenticationContainer} />
-                    <Route exact path="/home" component={StandardLayout(HomeContainer,  "Select a platform:")} />
-                    <Route exact path="/games" component={StandardLayout(GamesContainer,  "Select a platform:")} />
+                    <Route exact path="/home" component={StandardLayout(HomeContainer,  "Select a platform")} />
+                    <Route exact path="/games" component={StandardLayout(GamesContainer,  "Games list",  History.goBack)} />
                 </Switch>
             </Router>
         </Provider>

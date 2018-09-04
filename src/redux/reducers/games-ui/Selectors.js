@@ -37,7 +37,7 @@ export const getTotalPages = createSelector(
 
 export const getSortedGameList = createSelector(
   [getGamesList, getSortBy, getIsAscending],
-    (games, sortBy, isAscending) => _orderBy(games, sortBy, isAscending ? 'asc' : 'dsc')
+    (games, sortBy, isAscending) => _orderBy(games, sortBy, isAscending ? 'asc' : 'desc')
 );
 
 export const getGamesForCurrentPage = createSelector(

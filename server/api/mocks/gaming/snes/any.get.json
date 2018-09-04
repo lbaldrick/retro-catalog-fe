@@ -1,3 +1,103 @@
 {
-
+  "games": [
+    {
+      "id": "super-mario-world",
+      "name": "Super Mario World",
+      "datePurchased": "27/08/2011",
+      "price": 16.99,
+      "condition": "ACCEPTABLE",
+      "imageUrl": "http://localhost:3003/img/snes/super-mario-world.jpeg",
+      "rating": 5
+    },
+    {
+      "id": "street-fighter-2",
+      "name": "Super Street Fighter 2",
+      "datePurchased": "01/11/2012",
+      "price": 8.99,
+      "condition": "GOOD",
+      "imageUrl": "http://localhost:3003/img/snes/street-fighter-2.jpeg",
+      "rating": 4
+    },
+    {
+      "id": "turtles-in-time",
+      "name": "Turtles In Time",
+      "datePurchased": "10/09/2009",
+      "price": 39.99,
+      "condition": "GOOD",
+      "imageUrl": "http://localhost:3003/img/snes/turtles-in-time.jpeg",
+      "rating": 5
+    },
+    {
+      "id": "blazing-skies",
+      "name": "Blazing Skies",
+      "datePurchased": "23/06/2015",
+      "price": 9.99,
+      "condition": "VERY GOOD",
+      "imageUrl": "http://localhost:3003/img/snes/blazing-skies.jpeg",
+      "rating": 3
+    },
+    {
+      "id": "batman-returns",
+      "name": "Batman Returns",
+      "datePurchased": "01/04/2018",
+      "price": 15.99,
+      "condition": "GOOD",
+      "imageUrl": "http://localhost:3003/img/snes/batman-returns.jpeg",
+      "rating": 4
+    },
+    {
+      "id": "desert-strike",
+      "name": "Desert Strike",
+      "datePurchased": "20/02/2014",
+      "price": 10.99,
+      "condition": "GOOD",
+      "imageUrl": "http://localhost:3003/img/snes/desert-strike.jpeg",
+      "rating": 3
+    },
+    {
+      "id": "lethal-weapon",
+      "name": "Lethal Weapon",
+      "datePurchased": "21/01/2017",
+      "price": 11.99,
+      "condition": "Excellent",
+      "imageUrl": "http://localhost:3003/img/snes/lethal-weapon.jpeg",
+      "rating": 2
+    },
+    {
+      "id": "alien-3",
+      "name": "Alien 3",
+      "datePurchased": "11/04/2015",
+      "price": 14.99,
+      "condition": "ACCEPTABLE",
+      "imageUrl": "http://localhost:3003/img/snes/alien-3.jpeg",
+      "rating": 4
+    },
+    {
+      "id": "super-star-wars",
+      "name": "Super Star Wars",
+      "datePurchased": "11/05/2015",
+      "price": 14.99,
+      "condition": "EXCELLENT",
+      "imageUrl": "http://localhost:3003/img/snes/super-star-wars.jpeg",
+      "rating": 5
+    },
+    {
+      "id": "super-empire-strikes-back",
+      "name": "Super Empire Strikes Back",
+      "datePurchased": "10/02/2014",
+      "price": 25.99,
+      "condition": "GOOD",
+      "imageUrl": "http://localhost:3003/img/snes/super-empire-strikes-back.jpeg",
+      "rating": 5
+    },
+    {
+      "id": "super-return-of-the-jedi",
+      "name": "Super Return of the Jedi",
+      "datePurchased": "11/02/2017",
+      "price": 14.99,
+      "condition": "EXCELLENT",
+      "imageUrl": "http://localhost:3003/img/snes/super-return-of-the-jedi.jpeg",
+      "rating": 5
+    }
+  ]
 }

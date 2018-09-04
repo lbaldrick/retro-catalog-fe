@@ -4,9 +4,9 @@ import './List.scss';
 const List = (ItemComponent) => ({ items, onClick}) => {
     return <ul className="list">
         {
-            items.map((item) =>{
+            items.map((item, index) =>{
                 return <li className={'list_item'}>
-                    <ItemComponent { ...item  } onClick={onClick} />
+                    <ItemComponent { ...item  } key={index} onClick={onClick} />
                 </li>
             })
         }

@@ -2,6 +2,7 @@ export const SORT_GAMES_LIST = 'SORT_GAMES_LIST';
 export const SELECT_NEXT_PAGE_IN_GAME_LIST = 'SELECT_NEXT_PAGE_IN_GAME_LIST';
 export const SELECT_PREV_PAGE_IN_GAME_LIST = 'SELECT_PREV_PAGE_IN_GAME_LIST';
 export const SELECT_GAME_PLATFORM = 'SELECT_GAME_PLATFORM';
+export const RESET_STATE = 'RESET_STATE';
 
 
 export const sortGamesList = (sortBy, isAscending) => {
@@ -34,3 +35,11 @@ export const selectPlatform = (platform) => {
         payload: {platform}
     }
 };
+
+export const resetState = () => {
+    return {
+        type: RESET_STATE,
+        payload: {}
+    }
+};
+

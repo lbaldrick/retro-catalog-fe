@@ -3,74 +3,74 @@
     {
       "id": "centipede",
       "name": "Centipede",
-      "datePurchased": 1535898639,
-      "price": 10.00,
+      "datePurchased": "27/09/2010",
+      "price": 9.99,
       "condition": "ACCEPTABLE",
-      "imageUrl": "img/atari/centipede.png",
-      "rating": 4
+      "imageUrl": "http://localhost:3003/img/atari/centipede.jpg",
+      "rating": 5
     },
     {
       "id": "enduro",
       "name": "Enduro",
-      "datePurchased": 1535898639,
-      "price": 10.00,
+      "datePurchased": "01/11/2012",
+      "price": 11.49,
       "condition": "ACCEPTABLE",
-      "imageUrl": "img/atari//enduro.png",
-      "rating": 4
+      "imageUrl": "http://localhost:3003/img/atari/enduro.jpg",
+      "rating": 5
     },
     {
       "id": "superman",
       "name": "Superman",
-      "datePurchased": 1535898639,
-      "price": 10.00,
+      "datePurchased": "10/09/2009",
+      "price": 13.49,
       "condition": "GOOD",
-      "imageUrl": "img/atari/superman.png",
+      "imageUrl": "http://localhost:3003/img/atari/superman.jpeg",
       "rating": 4
     },
     {
       "id": "mario-bros",
       "name": "Mario Bros",
-      "datePurchased": 1535898639,
-      "price": 10.00,
-      "condition": "VERY_GOOD",
-      "imageUrl": "img/atari/mario-bros.png",
+      "datePurchased": "27/06/2016",
+      "price": 8.99,
+      "condition": "VERY GOOD",
+      "imageUrl": "http://localhost:3003/img/atari/mario-bros.jpeg",
       "rating": 4
     },
     {
       "id": "millipede",
       "name": "Millipede",
-      "datePurchased": 1535898639,
-      "price": 10.00,
+      "datePurchased": "01/09/2018",
+      "price": 5.89,
       "condition": "ACCEPTABLE",
-      "imageUrl": "img/atari/millipede.png",
-      "rating": 4
+      "imageUrl": "http://localhost:3003/img/atari/millipede.jpeg",
+      "rating": 3
     },
     {
       "id": "space-invaders",
       "name": "Space Invaders",
-      "datePurchased": 1535898639,
-      "price": 10.00,
+      "datePurchased": "20/02/2015",
+      "price": 6.01,
       "condition": "GOOD",
-      "imageUrl": "img/atari/space-invaders.png",
-      "rating": 4
+      "imageUrl": "http://localhost:3003/img/atari/space-invaders.jpeg",
+      "rating": 5
     },
     {
       "id": "outlaw",
       "name": "Outlaw",
-      "datePurchased": 1535898639,
-      "price": 10.00,
+      "datePurchased": "21/01/2017",
+      "price": 15.89,
       "condition": "GOOD",
-      "imageUrl": "img/atari/outlaw.png",
-      "rating": 4
+      "imageUrl": "http://localhost:3003/img/atari/outlaw.jpeg",
+      "rating": 2
     },
     {
       "id": "battlezone",
       "name": "Battlezone",
-      "datePurchased": 1535898639,
-      "price": 10.00,
+      "datePurchased": "11/04/2015",
+      "price": 12.57,
       "condition": "ACCEPTABLE",
-      "imageUrl": "img/atari/battlezone.png",
-      "rating": 4
+      "imageUrl": "http://localhost:3003/img/atari/battlezone.jpeg",
+      "rating": 3
     }
 
 

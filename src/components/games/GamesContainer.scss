@@ -1,0 +1,23 @@
+.games-container {
+  .paginated-list {
+    width: 28em;
+    margin: auto;
+
+    .list {
+      border: solid 1px;
+
+      label {
+        font-weight: bold;
+      }
+
+      li {
+        background: #fafafd;
+        font-family: sans-serif;
+      }
+
+      li:nth-child(odd) {
+        background: #f5f6f9;
+      }
+    }
+  }
+}

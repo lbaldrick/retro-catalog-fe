@@ -19,6 +19,9 @@ class Auth {
 
     handleAuthentication() {
         this.auth0.parseHash((err, authResult) => {
+            //idToken - users info
+            //accessToken - is to inform the API that the bearer of the token has been authorized to access the API
+            // and perform a predetermined set of actions (which is specified by the scopes granted)
             if (authResult && authResult.accessToken && authResult.idToken) {
                 this.setSession(authResult);
                 history.replace('/home');
