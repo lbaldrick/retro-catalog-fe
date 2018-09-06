@@ -25,9 +25,9 @@ const ListComponent = List(TileButton);
 
 class HomeContainer extends Component {
     onPlatformSelected = (id) => {
-        console.log('onPlatformSelected ' + id)
+        console.log('onPlatformSelected ' + id);
         this.props.onPlatformSelected(id);
-        this.props.history.push('/games');
+        this.props.history.push(`/games/${id}`);
     };
 
     render() {

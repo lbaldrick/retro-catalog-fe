@@ -62,7 +62,8 @@ const mapDispatchToProps = dispatch => {
 class GamesContainer extends Component {
 
     componentDidMount() {
-        this.props.fetchGames(this.props.selectedPlatform);
+        console.log(JSON.stringify(this.props.match));
+        this.props.fetchGames(this.props.match.params.platform);
     }
 
     componentWillUnmount() {
@@ -95,7 +96,8 @@ class GamesContainer extends Component {
                                              titleText={'Sorry something went wrong'}/>
         } else if (this.props.fetchingGamesSuccessful) {
             ContentComponent = <div className={'games-container_list'}>
-                <GameSort onSort={this.onSortList} selectedKey={this.props.sortBy} isAscending={this.props.isAscending}/>
+                <GameSort onSort={this.onSortList} selectedKey={this.props.sortBy}
+                          isAscending={this.props.isAscending}/>
                 <GamesList items={this.props.gamesForCurrentPage}
                            currentPage={this.props.currentPageNumber}
                            totalPages={this.props.totalNumOfPages}

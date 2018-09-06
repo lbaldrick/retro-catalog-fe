@@ -26,7 +26,7 @@ class Auth {
                 this.setSession(authResult);
                 history.replace('/home');
             } else if (err) {
-                history.replace('/home');
+                history.replace('/');
                 console.log(err);
             }
         });
